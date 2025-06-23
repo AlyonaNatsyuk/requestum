@@ -40,6 +40,7 @@ test('check opening and closing request a quote pop-up', async () => {
   await new Promise(resolve => setTimeout(resolve, 1000));
   await expect(page.locator('#contactModal').getByText('Name')).toBeVisible();
   await page.locator('#contactModal').getByRole('button', { name: 'Send Message' }).click();
+  expect(page.getByText('Include a valid email')).toBeVisible();
   await page.getByRole('button', { name: 'Apply form' }).click();
 });
 
