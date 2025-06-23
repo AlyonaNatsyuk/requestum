@@ -29,6 +29,10 @@ test.afterEach(async () => {
   }
 });
 
+test.afterAll(async () => {
+  await context.close();
+});
+
 
   test('check filters working', async () => {
     await page.locator('#blogPage .tags-container .button-group .button:has-text("Guides")').first().click();

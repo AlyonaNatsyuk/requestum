@@ -28,6 +28,11 @@ test.afterEach(async () => {
       await p.close();
     }
   }
+  
+});
+
+test.afterAll(async () => {
+  await context.close();
 });
 
 test('check opening and closing request a quote pop-up', async () => {

@@ -31,6 +31,10 @@ test.afterEach(async () => {
   }
 });
 
+test.afterAll(async () => {
+  await context.close();
+});
+
 test('check working for filters', async () => {
 await page.getByRole('link', { name: 'Web', exact: true }).click();
 await new Promise(resolve => setTimeout(resolve, 1000));

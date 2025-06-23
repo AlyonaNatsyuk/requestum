@@ -29,6 +29,10 @@ test.afterEach(async () => {
   }
 });
 
+test.afterAll(async () => {
+  await context.close();
+});
+
 async function checkCasesMatchFilters(page: Page, expectedTags: string[]) {
   const visibleCases = await page.$$('[tags]');
   for (const el of visibleCases) {
